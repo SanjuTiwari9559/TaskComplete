@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Task_Cat_ProMvc.Models.viewModel.addCategoryRequest;
+<body class="bg-ligth">
+    <div class="bg-warning bg-opacity-10 py-2">
+        <div class="container justify-content-center ">
+            <h3 class="text-center">
+                Add Category
+            </h3>
+
+        </div>
+    </div>
+    <div class="container py-5">
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label mb-3" for="name">
+                    Name
+                </label>
+                <input type="text" class="btn-lg btn-block w-100 rounded-pill" id="name" asp-for="Name" />
+            </div>
+
+            <div class="mb-3">
+                <div class="form-check d-flex align-items-center">
+                    <input type="checkbox" class="form-check-input me-2" id="isActive" asp-for="IsActive" />
+                    <label class="form-check-label" for="isActive">
+                        IsActive
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success btn-lg btn-block w-100 rounded-pill">Submit</button>
+            </div>
+
+
+        </form>
+
+    </div>
+</body>

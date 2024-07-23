@@ -1,0 +1,47 @@
+﻿@using Task_Cat_ProMvc.Models.Data
+@model List<Task_Cat_ProMvc.Models.Data.Product>
+
+<div class="py-2">
+    <div class="container">
+        <h3 class="text-center">Display All Product List</h3>
+
+    </div>
+
+</div>
+<div class="container py-3">
+    @if (Model != null && Model.Any())
+    {
+        <table class="table">
+            <thead class="bg-warning">
+                <tr>
+                    <th>Product Id</th>
+                    <th>Product Name</th>
+                    <th>Category Id</th>
+                    <th>Category Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.CategoryId</td>
+                        <td>@item.Category.Name</td>
+                        
+                        <td> <a asp-area="" asp-action="Edit" asp-controller="Product" asp-route-id="@item.Id">Edit</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <h1>There is no data Found</h1>
+    }
+
+</div>
+
+
+

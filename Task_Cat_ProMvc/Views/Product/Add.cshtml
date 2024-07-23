@@ -1,0 +1,36 @@
+﻿@model Task_Cat_ProMvc.Models.viewModel.AddProductRequest
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h3 class="text-center">
+            Add Product
+        </h3>
+    </div>
+</div>
+<div class="container">
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Product Name</label>
+            <input type="text" class="form-control rounded-pill" asp-for="Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Is Active</label>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="isActive" asp-for="IsActive" />
+                <span asp-validation-for="IsActive" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Category</label>
+            <select class="form-select rounded-pill" asp-for="CategoryId" asp-items="@(new SelectList(Model.Categories, "Value", "Text"))">
+                <option value="">Select Category</option>
+            </select>
+            <span asp-validation-for="CategoryId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+    </form>
+</div>
+
